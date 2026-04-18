@@ -1,16 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://byahlqo23lviw"]
+[gd_scene load_steps=17 format=3 uid="uid://byahlqo23lviw"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4d2fq"]
 [ext_resource type="PackedScene" uid="uid://c7fj5ra03hh03" path="res://assets/tiles.tscn" id="1_gdu8w"]
 [ext_resource type="Texture2D" uid="uid://bv6wq4o06sugb" path="res://img/sun.png" id="2_0d3jd"]
 [ext_resource type="PackedScene" uid="uid://dnm3ybf42d218" path="res://assets/snegurka.tscn" id="2_j4oty"]
+[ext_resource type="PackedScene" uid="uid://ca3u41beopkde" path="res://assets/interface.tscn" id="2_qo4e0"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_gbsvl"]
 [ext_resource type="Texture2D" uid="uid://b2ivfsktj4jwt" path="res://img/back.png" id="3_hbs3s"]
-[ext_resource type="PackedScene" uid="uid://cwjipktkdi87p" path="res://assets/health_bar.tscn" id="4_evbgh"]
 [ext_resource type="PackedScene" uid="uid://bvyx2fginnhag" path="res://assets/flake.tscn" id="5_ekqhj"]
-[ext_resource type="PackedScene" uid="uid://nux715etjgmp" path="res://assets/fail.tscn" id="5_i1724"]
-[ext_resource type="PackedScene" uid="uid://blr3kitjyd1hu" path="res://assets/win.tscn" id="6_g830a"]
-[ext_resource type="PackedScene" uid="uid://de3wyhoowgrjo" path="res://assets/pause.tscn" id="9_87b1c"]
+[ext_resource type="PackedScene" uid="uid://dnk4mmtv2qbn4" path="res://assets/lightning.tscn" id="10_yodew"]
 [ext_resource type="PackedScene" uid="uid://bj2yr8twkvon7" path="res://assets/cog.tscn" id="12_d58s3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3gsm"]
@@ -60,6 +58,8 @@ animations = [{
 [node name="level" type="Node"]
 script = ExtResource("1_4d2fq")
 
+[node name="interface" parent="." instance=ExtResource("2_qo4e0")]
+
 [node name="cog" parent="." instance=ExtResource("12_d58s3")]
 position = Vector2(2341, -4317)
 
@@ -70,45 +70,8 @@ limit_right = 2750
 limit_bottom = 300
 script = ExtResource("3_gbsvl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("4_evbgh")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -261.0
-offset_top = 5.0
-offset_right = -5.00024
-offset_bottom = 32.0
-grow_horizontal = 0
-
-[node name="pause_butt" type="Button" parent="CanvasLayer"]
-offset_left = 1094.0
-offset_top = 45.0
-offset_right = 1139.0
-offset_bottom = 89.0
-text = "X"
-
-[node name="pause" parent="CanvasLayer" instance=ExtResource("9_87b1c")]
-offset_left = 528.0
-offset_top = 286.0
-offset_right = -488.0
-offset_bottom = -280.0
-
-[node name="fail" parent="CanvasLayer" instance=ExtResource("5_i1724")]
-offset_left = 530.0
-offset_top = 281.0
-offset_right = -499.0
-offset_bottom = -281.0
-
-[node name="win" parent="CanvasLayer" instance=ExtResource("6_g830a")]
-offset_left = 534.0
-offset_top = 312.0
-offset_right = -508.0
-offset_bottom = -272.0
-
 [node name="snegurka" parent="." instance=ExtResource("2_j4oty")]
-position = Vector2(-415, 57)
+position = Vector2(-397, 60)
 JUMP_VELOCITY = -650.0
 
 [node name="Tiles" parent="." instance=ExtResource("1_gdu8w")]
@@ -121,6 +84,8 @@ visible = false
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ekofi")
+
+[node name="Node" type="Node" parent="backings/back"]
 
 [node name="sun" type="AnimatedSprite2D" parent="backings"]
 texture_filter = 1
@@ -151,4 +116,5 @@ position = Vector2(789, -1749)
 [node name="flake8" parent="." instance=ExtResource("5_ekqhj")]
 position = Vector2(1152, -3348)
 
-[connection signal="pressed" from="CanvasLayer/pause_butt" to="." method="_on_pause_butt_pressed"]
+[node name="lightning" parent="." instance=ExtResource("10_yodew")]
+position = Vector2(-148, 123)

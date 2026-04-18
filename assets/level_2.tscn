@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhn2sfsfhhrab"]
+
+[ext_resource type="PackedScene" uid="uid://ca3u41beopkde" path="res://assets/interface.tscn" id="1_v1yme"]
+[ext_resource type="PackedScene" uid="uid://dnm3ybf42d218" path="res://assets/snegurka.tscn" id="2_o2xo7"]
+[ext_resource type="PackedScene" uid="uid://c7fj5ra03hh03" path="res://assets/tiles.tscn" id="3_fwta4"]
+
+[node name="level2" type="Node"]
+
+[node name="interface" parent="." instance=ExtResource("1_v1yme")]
+
+[node name="snegurka" parent="." instance=ExtResource("2_o2xo7")]
+position = Vector2(-70, 48)
+
+[node name="Camera2D" type="Camera2D" parent="snegurka"]
+
+[node name="Tiles" parent="." instance=ExtResource("3_fwta4")]
+layer_0/tile_data = PackedInt32Array(196606, 65536, 0, 196607, 65536, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 131078, 65536, 0, 131079, 65536, 0, 131080, 65536, 0, 131081, 65536, 0, 131082, 65536, 0, 196605, 196608, 0, 131069, 0, 2, 65533, 0, 2, -3, 0, 2, -65539, 131072, 1, -65538, 196608, 1, -65537, 196608, 1, -131072, 196608, 1, -131071, 196608, 1, -131070, 196608, 1, -131069, 196608, 1, -131068, 196608, 1, -131067, 196608, 1, -131066, 196608, 1, -131065, 196608, 1, -131064, 196608, 1, -131063, 196608, 1, -131062, 196608, 1)

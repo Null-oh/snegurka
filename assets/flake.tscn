@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvyx2fginnhag"]
+[gd_scene load_steps=11 format=3 uid="uid://bvyx2fginnhag"]
 
 [ext_resource type="Texture2D" uid="uid://clghmtkm4iwks" path="res://img/flake.png" id="1_6vf01"]
 [ext_resource type="Script" path="res://scripts/flake.gd" id="1_ou4px"]
+[ext_resource type="AudioStream" uid="uid://cpcctlvmae202" path="res://audio/snowflake_1.mp3" id="3_gea1f"]
+[ext_resource type="AudioStream" uid="uid://db0d42shbqr8u" path="res://audio/pick_1 (online-video-cutter.com).mp3" id="3_jv5er"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chvxi"]
 atlas = ExtResource("1_6vf01")
@@ -52,5 +54,13 @@ frame_progress = 0.23468
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pp8oo")
+
+[node name="idle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gea1f")
+autoplay = true
+max_distance = 500.0
+
+[node name="pick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jv5er")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

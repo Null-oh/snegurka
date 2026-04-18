@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj2yr8twkvon7"]
+[gd_scene load_steps=10 format=3 uid="uid://bj2yr8twkvon7"]
 
 [ext_resource type="Script" path="res://scripts/cog.gd" id="1_1sq4q"]
 [ext_resource type="Texture2D" uid="uid://bmxctvkt1qira" path="res://img/cog.png" id="1_nly4s"]
+[ext_resource type="AudioStream" uid="uid://dxwfxkkgavbbv" path="res://audio/workbench_1.mp3" id="3_hbcts"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pkhf"]
 atlas = ExtResource("1_nly4s")
@@ -53,5 +54,10 @@ frame_progress = 0.203992
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pke36")
+
+[node name="idle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hbcts")
+autoplay = true
+max_distance = 1000.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

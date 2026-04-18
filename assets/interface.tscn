@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca3u41beopkde"]
+
+[ext_resource type="Script" path="res://scripts/interface.gd" id="1_0xjgj"]
+[ext_resource type="PackedScene" uid="uid://cwjipktkdi87p" path="res://assets/health_bar.tscn" id="2_nd6b4"]
+[ext_resource type="PackedScene" uid="uid://de3wyhoowgrjo" path="res://assets/pause.tscn" id="3_kcvtu"]
+[ext_resource type="PackedScene" uid="uid://nux715etjgmp" path="res://assets/fail.tscn" id="4_xsi1a"]
+[ext_resource type="PackedScene" uid="uid://blr3kitjyd1hu" path="res://assets/win.tscn" id="5_66v2i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8kc6"]
+bg_color = Color(0.0588235, 0.917647, 0.941176, 1)
+
+[node name="interface" type="CanvasLayer"]
+script = ExtResource("1_0xjgj")
+
+[node name="pause" parent="." instance=ExtResource("3_kcvtu")]
+offset_left = 528.0
+offset_top = 286.0
+offset_right = -488.0
+offset_bottom = -280.0
+
+[node name="fail" parent="." instance=ExtResource("4_xsi1a")]
+offset_left = 530.0
+offset_top = 281.0
+offset_right = -499.0
+offset_bottom = -281.0
+
+[node name="win" parent="." instance=ExtResource("5_66v2i")]
+offset_left = 534.0
+offset_top = 312.0
+offset_right = -508.0
+offset_bottom = -272.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -322.0
+offset_bottom = 62.0
+grow_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="HealthBar" parent="VBoxContainer" instance=ExtResource("2_nd6b4")]
+layout_mode = 2
+
+[node name="pause_butt" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = " X "
+
+[node name="bonus" parent="VBoxContainer" instance=ExtResource("2_nd6b4")]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_e8kc6")
+show_percentage = false
+script = null
+
+[connection signal="pressed" from="VBoxContainer/pause_butt" to="." method="_on_pause_butt_pressed"]

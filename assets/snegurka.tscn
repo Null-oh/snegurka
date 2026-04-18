@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dnm3ybf42d218"]
+[gd_scene load_steps=18 format=3 uid="uid://dnm3ybf42d218"]
 
-[ext_resource type="Script" path="res://scripts/snegurka.gd" id="1_y7vnn"]
+[ext_resource type="Script" path="res://scripts/snegurka2.gd" id="1_btk5a"]
 [ext_resource type="Texture2D" uid="uid://cfgnvslxijkwv" path="res://img/снегурка.png" id="2_685m8"]
+[ext_resource type="AudioStream" uid="uid://yehsrg1yavxv" path="res://audio/sizzle_1.mp3" id="3_2cmap"]
+[ext_resource type="AudioStream" uid="uid://cjgn2fgehw4fl" path="res://audio/crash.wav" id="4_u5kqh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlk58"]
 atlas = ExtResource("2_685m8")
@@ -106,7 +108,7 @@ animations = [{
 }]
 
 [node name="snegurka" type="CharacterBody2D"]
-script = ExtResource("1_y7vnn")
+script = ExtResource("1_btk5a")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-31, 24, -11, -25, -21, -32, -21, -38, 0, -64, 21, -38, 21, -32, 11, -25, 31, 24, 6, 63, -6, 63)
@@ -115,5 +117,11 @@ polygon = PackedVector2Array(-31, 24, -11, -25, -21, -32, -21, -38, 0, -64, 21, 
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o8d5l")
 animation = &"death"
+
+[node name="sizzle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2cmap")
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u5kqh")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
