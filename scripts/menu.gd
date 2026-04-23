@@ -2,7 +2,7 @@ extends Node
 
 func _ready():
 	Global.health = 100
-	Global.paused = false
+	#Global.paused = false
 	Global.won = false
 
 func _on_play_pressed():
