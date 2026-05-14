@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://byahlqo23lviw"]
+[gd_scene load_steps=18 format=3 uid="uid://byahlqo23lviw"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4d2fq"]
 [ext_resource type="PackedScene" uid="uid://c7fj5ra03hh03" path="res://assets/tiles.tscn" id="1_gdu8w"]
 [ext_resource type="Texture2D" uid="uid://bv6wq4o06sugb" path="res://img/sun.png" id="2_0d3jd"]
 [ext_resource type="PackedScene" uid="uid://dnm3ybf42d218" path="res://assets/snegurka.tscn" id="2_j4oty"]
 [ext_resource type="PackedScene" uid="uid://ca3u41beopkde" path="res://assets/interface.tscn" id="2_qo4e0"]
+[ext_resource type="PackedScene" uid="uid://ciqey2ybplbtm" path="res://assets/joystick.tscn" id="3_6dxy3"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_gbsvl"]
 [ext_resource type="Texture2D" uid="uid://b2ivfsktj4jwt" path="res://img/back.png" id="3_hbs3s"]
 [ext_resource type="PackedScene" uid="uid://bvyx2fginnhag" path="res://assets/flake.tscn" id="5_ekqhj"]
@@ -118,3 +119,5 @@ position = Vector2(1152, -3348)
 
 [node name="lightning" parent="." instance=ExtResource("10_yodew")]
 position = Vector2(-148, 123)
+
+[node name="joystick" parent="." instance=ExtResource("3_6dxy3")]

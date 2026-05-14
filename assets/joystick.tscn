@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciqey2ybplbtm"]
+
+[ext_resource type="Script" path="res://joystick.gd" id="1_ply6w"]
+
+[node name="joystick" type="CanvasLayer"]
+script = ExtResource("1_ply6w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="up" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="left" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="right" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="down" type="Button" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="GridContainer2" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect6" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect5" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="space" type="Button" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect7" type="ColorRect" parent="MarginContainer/GridContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="button_down" from="MarginContainer/GridContainer/left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="MarginContainer/GridContainer/left" to="." method="_on_left_button_up"]
+[connection signal="button_down" from="MarginContainer/GridContainer/right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="MarginContainer/GridContainer/right" to="." method="_on_right_button_up"]
+[connection signal="button_down" from="MarginContainer/GridContainer2/space" to="." method="_on_space_button_down"]
+[connection signal="button_up" from="MarginContainer/GridContainer2/space" to="." method="_on_space_button_up"]

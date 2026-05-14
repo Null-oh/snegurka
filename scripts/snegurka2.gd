@@ -89,9 +89,10 @@ func _physics_process(delta):
 
 
 func is_in_light() -> bool:
-	var cell_pos = tilemap.local_to_map(global_position)
-	var source_id = tilemap.get_cell_source_id(0, Vector2i(cell_pos.x, cell_pos.y))
-	if source_id == 1: 
-		return true
+	if tilemap:
+		var cell_pos = tilemap.local_to_map(global_position)
+		var source_id = tilemap.get_cell_source_id(0, Vector2i(cell_pos.x, cell_pos.y))
+		if source_id == 1: 
+			return true
 	return false
 

@@ -7,5 +7,3 @@ extends Node
 func _ready():
 	Global.speed = 1
 	Global.health = 100
-
-func _process(delta): pass
